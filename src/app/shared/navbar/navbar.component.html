@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-sm bg-body-tertiary"
+data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/home" >Effects</a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/user/1">Usuario</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search" >
+        <input #ID (keydown.enter)="search(ID.value);$event.preventDefault()" class="form-control me-2" type="search" placeholder="ID usuaio">
+        <button (click)="search(ID.value)" class="btn btn-outline-success" type="button">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
