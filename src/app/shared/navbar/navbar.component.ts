@@ -10,6 +10,6 @@ export class NavbarComponent {
   private router:Router = inject(Router);
 
   search(id:string){
-this.router.navigate([`/user/${id}`])
+this.router.navigate([`/users/${id}`])
   }
 }

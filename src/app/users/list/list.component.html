@@ -1,8 +1,19 @@
+
+<div class="alert alert-danger text-center" role="alert"
+*ngIf="error">
+<h4 class="alert-heading">Error</h4>
+<pre>
+{{ error | json }}
+</pre>
+<p class="mb-0"></p>
+</div>
+
+
 <div class="row row-cols-3 row-cols-md-6 g-4" >
 
-  <ng-container *ngIf="users">
+  <ng-container *ngIf="!loading">
 
-    <div class="col" *ngFor="let user of users">
+    <div class="col" *ngFor="let user of users" (click)="goUser(user.id)" >
       <div class="card btn" >
         <img [src]="user.avatar" class="card-img-top" >
         <div class="card-body">
@@ -14,8 +25,7 @@
 
   </ng-container>
 
-
- <ng-container *ngIf="!users">
+ <ng-container *ngIf="loading">
 
   <div class="card" aria-hidden="true" *ngFor="let i of [1, 2, 3]">
     <div class="card-body">
